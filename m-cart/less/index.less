@@ -1,0 +1,252 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+//设置rem基准值
+
+@rem:32;
+
+.rem(@attr,@px1){
+	@{attr}:unit(@px1 / @rem , rem);
+}
+.rem(@attr,@px1,@px2){
+	@{attr}:unit(@px1 / @rem , rem)  unit(@px2 / @rem, rem);
+}
+.rem(@attr,@px1,@px2,@px3){
+	@{attr}:unit(@px1 / @rem , rem)  unit(@px2 / @rem, rem) unit(@px3 / @rem, rem);
+}
+.rem(@attr,@px1,@px2,@px3,@px4){
+	@{attr}:unit(@px1 / @rem , rem)  unit(@px2 / @rem, rem) unit(@px3 / @rem, rem)  unit(@px4 / @rem, rem);
+}
+@border-color:#e5e5e5;
+.container{
+	position: relative;
+}
+.header{
+	.rem(height,45);
+	.rem(line-height,45);
+	.rem(font-size,20);
+	border-bottom:1px solid @border-color;
+	.header-back{
+		.rem(width,45);
+		text-align: center;
+	}
+	.header-title{
+		display: inline-block;
+		.rem(width,200);
+		text-align: center;
+	}
+}
+.address{
+	.rem(height,45);
+	.rem(line-height,45);
+	.rem(font-size,20);
+	border-bottom:1px solid @border-color;
+	.address-ico{
+		color: #ccc;
+		.rem(margin-left,10);
+	}
+	.address-con{
+		.rem(font-size,16);
+		display: inline-block;
+		// float: left;
+	}
+	.address-edit{
+		.rem(width,100);
+		.rem(height,45);
+		.rem(line-height,45);
+		color: #f10;
+		.rem(font-size,18);
+		display: inline-block;
+		float: right;
+		// .rem(font-weight,2);
+		// font-weight: bold;
+	}
+}
+.brank{
+	.rem(height,45);
+	.rem(line-height,45);
+	.rem(font-size,20);
+	position: relative;
+	border-bottom:1px solid @border-color;
+	.brank-ico{
+		.rem(margin-left,10);
+		.rem(font-size,20);
+		color: #f10;
+		// display: inline-block;
+		// position: absolute;
+		// bottom: 15px;
+	}
+	.brank-con{
+		.rem(font-size,16);
+		display: inline-block;
+		// float: left;
+		color: #ccc;
+	}
+	.brank-edit{
+		.rem(width,100);
+		.rem(height,45);
+		.rem(line-height,45);
+		.rem(font-size,16);
+		display: inline-block;
+		// .rem(font-weight,2);
+		font-weight: bold;
+	}
+}
+.dec{
+	.rem(height,45);
+	.rem(line-height,45);
+	.rem(font-size,20);
+	position: relative;
+	border-bottom:1px solid @border-color;
+	.dec-edit{
+		.rem(width,220);
+		.rem(height,45);
+		.rem(line-height,45);
+		.rem(font-size,12);
+		display: inline-block;
+		.rem(margin-left,10);
+		color: #898989;
+
+		// .rem(font-weight,2);
+		// font-weight: bold;
+	}
+	.dec-ico{
+		.rem(font-size,12);
+		color: #898989;
+	}
+}
+.product{
+	.rem(height,150);
+	border-bottom:1px solid @border-color;
+	.btn{
+		.rem(width,20);
+		.rem(height,20);
+		border: 1px solid #c5c5c5;
+		border-radius: 50%;
+		.rem(margin,60,0,65,10);
+		float: left;
+	}
+	.product-img{
+		.rem(margin-top,12);
+	}
+	.pro-ul{
+		.rem(width,180);
+		.rem(margin-top,12);
+
+		float: right;
+		.li1{
+			.rem(font-size,12);
+			.rem(margin-bottom ,15);
+		}
+		.li2{
+			.rem(font-size,12);
+			color: #c5c5c5;
+			.rem(margin-bottom ,15);
+
+		}
+		.li3{
+			.rem(font-size,12);
+			.rem(margin-bottom ,15);
+
+			.sp1{
+				color:#f10;
+			}
+			.sp2{
+				.rem(width,30);
+				.rem(height,30);
+				background: #ccc;
+				color: #000;
+				.rem(line-height,30);
+				text-align: center;
+				display: inline-block;
+				.rem(font-size,12);
+			}
+		}
+		.li4{
+			.rem(font-size,12);
+			color: #878787;
+			.sp1{
+				float: left;
+				.rem(margin-left,40);
+				display: inline-block;
+			}
+			.sp2{
+				.rem(margin-left,20);
+
+			}
+		}
+	}
+	
+}
+.bot{
+	.rem(height,50);
+	position: fixed;
+	// .rem(top,485);
+	.rem(bottom,30);
+	background: #fff;
+	// .rem(margin-top,-60);
+	
+	.bot-hd{
+		.rem(width,50);
+		.rem(height,50);
+		.rem(font-size,12);
+		float: left;
+		color: #878787;
+		i{
+			color: #f10;
+			.rem(font-size,20);
+			.rem(margin,5,10,5,10);
+		}
+		span{
+			display: inline-block;
+			.rem(margin-left,10);
+		}
+	}
+	.bot-con{
+		float: left;
+		.rem(width,150);
+		.rem(height,50);
+		.bot-con1{
+			.rem(height,25);
+			.rem(font-size,16);
+			.rem(margin-top,5);
+			// .bot-con-1{
+			// 	.rem(width,40);
+			// 	.rem(font-size,12);
+			// 	.rem(margin-top,0);
+			// 	display: block;
+			// 	.rem(margin-top,10);
+			// 	// display: inline-block;
+			// }
+	
+			.bot-con-2{
+				color: #f10;
+				.rem(font-size,12);
+				display: inline-block;
+
+			}
+		}
+		.bot-con2{
+			.rem(height,24);
+			.rem(margin-bottom,0);
+
+			.rem(font-size,12);
+			color:#878787;
+		}
+	
+		
+	}
+	.bot-bott{
+		.rem(height,50);
+		.rem(width,110);
+		.rem(font-size,16);
+		.rem(line-height,50);
+		text-align: center;
+		background: #f10;
+		color: #fff;
+		float: right;
+	}
+}
+
