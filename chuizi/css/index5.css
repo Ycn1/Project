@@ -1,0 +1,95 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	width: 100%;
+	height: 100%;
+	background: url(../image/beijing.jpg);
+}
+a{
+	text-decoration: none;
+}
+.son1{
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	top: 0px;
+	background: #fcfcfc;
+	line-height: 60px;
+	border-bottom: 1px solid #d2d2d2;
+}
+.son1 img{
+	vertical-align: middle;
+	margin-left: 22px;
+	margin-right: 17px;
+	margin-top: -6px;
+}
+.son1 span{
+	font-size: 23px;
+	color: #8c8c8c;
+}
+
+.son2{
+	width: 0px;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	background: red;
+}
+.son3{
+	width: 100%;
+	height: 30px;
+	background: #f0f0f0;
+	margin-top: 140px;
+	border-top: 1px solid #d5d5d5;
+	line-height: 30px;
+	text-align: center;
+}
+.son3 a{
+	font-size: 13px;
+	color: #6c96f3;
+}
+.son3 span{
+	font-size: 13px;
+	color: #b1b1b1;
+}
+.son4{
+	text-align: center;
+	
+}
+.son4 img{
+	margin-top: 100px;
+	margin-bottom: 25px;
+}
+.son4 h4{
+	font-size: 35px;
+	color: #666;
+	font-weight:500;
+}
+.son4 p{
+	margin-top: 23px;
+	margin-bottom: 25px;
+	font-size: 17px;
+	color: #b1b1b1;
+	line-height: 35px;
+}
+.son4 div{
+	width: 200px;
+	height: 50px;
+	border: 1px solid #6d94e0;
+	background-color: #6699f6;
+	border-radius: 4px;
+	margin: 0 auto;
+	margin-bottom: 17px;
+	line-height: 50px;
+	
+}
+.son4 a{
+	font-size: 12px;
+	color: #b1b1b1;
+}
+.son4 div a{
+	color: #fff;
+	font-size: 16px;
+}

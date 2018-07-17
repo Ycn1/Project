@@ -1,0 +1,231 @@
+#bodyc{
+	background-color: #ededed;
+	height: 5000px;
+}
+*{
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	font-size: 14px;
+}
+.container{
+	width: 1220px;
+	margin:0 auto;
+}
+ .header .container {
+	border: 2px solid #e7e7e7;
+	border-radius: 10px;
+	height: 205px;
+	overflow: hidden;
+	background-color: gray;
+}
+ .header .container li{
+	border: 1px solid #e7e7e7;
+	width: 25%;
+	float: left;
+}
+ .header .container li:nth-child(1):hover{
+	opacity: 0.8;
+}
+ .header .container li:nth-child(3):hover{
+	opacity: 0.8;
+}
+.box-ridus{
+	border-radius: 10px;
+	overflow: hidden;
+}
+.goodstop{
+	height: 60px;
+	width: 100%;
+	line-height: 60px;
+	background-color: white;
+	padding:0px 22px;
+	font-size: 18px;
+	color: #666666;
+	border: 1px solid #ececec;
+	box-sizing: border-box;
+}
+.goodstop ul{
+	float: right;
+	margin-top: 17px; 
+}
+.goodstop ul li{
+	border: 1px solid #a6a6a6;
+	text-align: center;
+	line-height: 19px;
+	height: 25px;
+	width: 25px;
+	float: left;
+	border-radius: 50%;
+	margin-left: 30px;
+	box-shadow:0px 0px 10px 2px rgba(0,0,0,0.2);
+	font-weight: 900;
+}
+.goodsbox li{
+	width: 25%;
+	height: 426px;
+	background-color: white;
+	box-sizing: border-box;
+	position: relative;
+	border: 1px solid #e5e5e5;
+	float: left;
+}
+.goodsbox li:nth-child(1){
+	border-left: none;
+}
+.goodsbox li:nth-child(4){
+	border-right: none;
+}
+.flog:before{
+	content: '直降';
+	display: block;
+	height: 20px;
+	width: 60px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	border: 1px solid #f6a8a1;
+	background-color: #ffe7e5;
+	color: #f6a8a1;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 18px 18px;
+}
+.flog1:before{
+	content: '买赠';
+	display: block;
+	height: 20px;
+	width: 60px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	border: 1px solid #a06e37;
+	background-color: #fffbdf;
+	color: #a06e37;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 18px 18px;
+}
+.goodsbox li img{
+	margin-top: 70px;
+	margin-left: 107px;
+}
+.goodsbox li .shadows{
+	height: 426px;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+}
+.goodsbox li .shadows:hover{
+	box-shadow: 0 0 50px rgba(0,0,0,0.1) inset;
+}
+.goodsbox p{
+	text-align: center;
+	height: 16px;
+	line-height: 16px;
+}
+.goodsbox .info{
+	font-size: 14px;
+	color: #333;
+	font-weight: bolder;
+}
+.goodsbox .boxbtn{
+	height: 15px;
+	margin-left: 39%;
+}
+.goodsbox .boxbtn li{
+	height: 15px;
+	width: 15px;
+	float: left;
+	margin-right: 15px;
+	position: relative;
+	border:none;
+}
+.goodsbox .boxbtn li a{
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border: 2px solid #b2b2b2;
+	border-radius: 50%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 999;
+}
+.goodsbox .boxbtn li:hover a{
+	color: red;
+}
+.goodsbox .desc{
+	margin:16px 0;
+	color: #e04e4e;
+	font-size: 13px;
+}
+.goodsbox .price{
+	margin-top: 20px;
+	font-weight: 900;
+	color: #d44d44;
+}
+ .goodsbox li:nth-child(1){
+	width: 610px;
+}
+ .goodsbox li:nth-child(1) img{
+	margin-top: 0px;
+	margin-left: 0px;
+	width: 100%;
+	height: 100%;
+}
+ .goodsbox .boxbtn li:nth-child(1){
+	width: 15px;
+}
+ .goodsbox .buy{
+ 	position: absolute;
+ 	bottom: 27px;
+ 	left:42px;
+ 	height: 30px;
+ 	width: 250px;
+ 	z-index: 50;
+ 	line-height:30px;
+ 	background-color: white;
+ 	opacity: 0; 
+ }
+ .goodsbox li:hover .buy{
+	opacity: 1;
+ }
+ .goodsbox .check{
+ 	height: 30px;
+ 	width: 100px;
+ 	display: inline-block;
+ 	border: 2px solid #efefef;
+ 	border-radius: 10px;
+ 	text-align:center;
+ 	line-height: 26px;
+ 	color: #333;
+ 	margin-right: 20px;
+ 	background-color: white;
+ }
+  .goodsbox .purchase{
+ 	height: 30px;
+ 	width: 100px;
+ 	display: inline-block;
+ 	background-color: #628ae5;
+ 	border-radius: 10px;
+ 	text-align:center;
+ 	line-height: 26px;
+ 	color: white;
+ 	border: 2px solid #efefef;
+ }
+  .goodsbox .more{
+ 	height: 30px;
+ 	width: 100px;
+ 	display: inline-block;
+ 	background-color: #628ae5;
+ 	border-radius: 10px;
+ 	text-align:center;
+ 	line-height: 26px;
+ 	color: white;
+ 	border: 2px solid #efefef;
+ }
