@@ -1,0 +1,67 @@
+/*
+* @Author: TomChen
+* @Date:   2018-04-08 10:56:44
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-04-08 15:44:10
+*/
+.container{
+	width: 1226px;
+	margin-right: auto;
+	margin-left: auto;	
+}
+.clearfix:after{
+	content: '';
+	display: block;
+	clear: both;
+	height: 0px;
+	visibility: hidden;
+}
+.clearfix{
+	*zoom:1;
+}
+body{
+	font-size: 12px;
+}
+.loader{
+			position: relative;
+			height: 15px;
+			width: 4px;
+			background: #ff6700;
+			margin:0 auto;
+			transform: scale(1,0.7);
+			animation: loading 0.3s linear 0s infinite alternate-reverse;
+		}
+		.loader:after{
+			content: '';
+			width: 4px;
+			height: 12px;
+			background: #ff6700;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin:-6px 0 0 6px;
+			transform: scale(1,0.5);
+			animation: loading 0.3s linear 0s infinite alternate-reverse;
+		}
+		.loader:before{
+			content: '';
+			width: 4px;
+			height: 12px;
+			background: #ff6700;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin:-6px 0 0 -10px;
+			transform: scale(1,0.3);
+			animation: loading 0.3s linear 0s infinite alternate-reverse;
+		}
+		@keyframes loading {
+			from{
+				opacity: 0.2;
+				transform: scale(1，0.5);
+			}
+			to{
+				opacity: 1;
+				transform: scale(1,1);
+			}
+		}
