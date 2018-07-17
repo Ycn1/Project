@@ -1,0 +1,167 @@
+body{
+	font-size: 12px;
+}
+.container{
+	width: 1200px;
+	margin: 0 auto;
+}
+.transition{
+	transition: all 0.5s;
+}
+a{
+	text-decoration: none;
+}
+.link{
+	color: #4d555d;
+}
+.link:hover{
+	color: #ea675a;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix:after{
+	clear: both;
+	display: block;
+	content: "";
+	height:0px;
+	visibility: hidden;
+}
+.clearfix{
+	*zoom:1;
+}
+/**/
+.dropdown{
+		position: relative;
+		z-index: 3;
+	}
+.dropdown-toggle{
+		position: relative;
+		z-index: 2;
+	}
+	
+.dropdown-layer{
+		position: absolute;
+		z-index: 1;
+		display: none;
+		overflow: hidden;
+	}
+.dropdown-left{
+	left: 0;
+}
+.dropdown-right{
+	right: 0;
+}
+.dropdown-loading{
+	width:40px;
+	height: 32px;
+	margin:20px;
+	background: url(../images/loading.gif) no-repeat;
+}
+[class*='-active'] .dropdown-arrow{
+		transform: rotate(180deg);
+	}
+/*下拉的公共样式*/
+	.fadeOut{
+			opacity: 0 !important;
+			visibility: hidden !important;
+		}
+		.slideUpDownCollapse{
+			height: 0 !important;
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+		}
+		.slideLeftRightCollapse{
+			width: 0 !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}	
+/*下拉公共样式结束*/
+/*搜索框公共样式开始*/
+.search{
+	position: relative;
+}
+
+.search-layer{
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	left:0px;
+	display: none;
+}
+/*搜索框公共样式结束*/
+/*轮播图公共样式开始*/
+
+.carouselContent{
+	width: 718px;
+	height: 494px;
+	margin-left:0px;
+	margin-top: 0px;
+	z-index: 0;
+	position: relative;
+	overflow: hidden;
+}
+.carouselContent .imgs .carousel-item {
+	width: 718px;
+	height: 494px;
+	background: red;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.carouselContent .imgs .carousel-item img{
+	width: 718px;
+	height: 494px;
+}
+.bottom-btn{
+	position: absolute;
+	bottom:20px;
+	left: 50%;
+	margin-left: -40px;
+}
+.bottom-item{
+	height: 10px;
+	width: 10px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	float: left;
+	background: #000;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.arrowBtn{
+	width: 30px;
+	height: 60px;
+	font-size: 20px;
+	color: #fff;
+	line-height: 60px;
+	text-align: center;
+	background: rgba(0,0,0,0.7);
+	font-weight: bold;
+	cursor: pointer;
+}
+.active{
+	background: #fff;
+}
+.carouselContent .btn-left{
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	margin-top: -30px;
+}
+.carouselContent .btn-right{
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	margin-top: -30px;
+}
+.carouselContent.fade .carousel-item{
+	display: none;
+}
+.carouselContent.slide .carousel-item{
+	left: 100%;
+}
+/*轮播图公共样式结束*/

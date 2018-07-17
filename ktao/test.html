@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #ccc;
+		}
+		div{
+			width: 200px;
+			height: 150px;
+			margin:200px auto;
+			cursor: pointer;
+		}
+		img{
+			width: 200px;
+			height: 150px;
+		}
+		.jp{
+			width: 200px;
+			height: 200px;
+			/*border: 1px solid #000;*/
+			margin:0px auto;
+			color: red;
+			font-size: 20px;
+			/*display: none;*/
+			/*opacity: 0;*/
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<!-- <button>抽奖</button> -->
+	<div class="btn"> <img src="抽奖.png" alt=""></div>
+	<div class="jp"></div>
+</body>
+<script>
+		$(function(){
+		
+			$('.btn').click(function(){
+				var jqXHR = $.ajax({
+					url:'http://10.196.18.35:3000',
+					type:'GET',
+					dataType:'json',					
+				});
+				jqXHR.done(function(data,statusMsg,jqXHR){
+
+					console.log("done:::",data,statusMsg,jqXHR);
+					// $('jp').css('opacity',1)
+					$('.jp').html(data.name);
+
+				});
+				jqXHR.fail(function(jqXHR,statusMsg){
+					console.log('fail:::',jqXHR,statusMsg);
+				});
+							
+				$('.btn').css('opacity',0);
+				
+			});
+
+		})
+	</script>
+</html>

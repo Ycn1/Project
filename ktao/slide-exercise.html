@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 10px;
+		}
+	</style>
+	
+</head>
+<body>
+	<button>&lt;</button>
+	<button>&gt;</button>
+	<div class="box transition"></div>
+</body>
+<script type="text/javascript" src="js/transition.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+
+<script type="text/javascript">
+	(function($){
+		function Slient($elem){
+			this.$elem =$elem;
+			this.$elem.removeClass('transition');
+			this.currentX = parseFloat(this.$elem.css('left'));
+			this.currentY = parseFloat(this.$elem.css('top'));
+
+		}
+		Slient.prototype = {
+			constructor:Slient,
+			to:function(x,y){
+				x = (typeof x == 'number') ? x:this.currentX;
+				y = (typeof y == 'number') ? y:this.currentY;
+				if( this.currentX == x &&  this.currentY == y) return;
+				this.$elem.trigger("move");
+				this.$elem.css({
+					top:y,
+					left:x
+
+				});
+				this.$elem.trigger('moved');
+				this.currentX = x;
+				this.currentY =y;
+
+				},
+			x:function(x){
+				this.$elem.to(x);
+			},
+			y:function(y){
+				this.$elem.to(null,y);
+			}
+		}
+		function Css3($elem){
+			this.$elem =$elem;
+			this.$elem.addClass('transition');
+			this.currentX = parseFloat(this.$elem.css('left'));
+			this.currentY = parseFloat(this.$elem.css('top'));
+			this.$elem.css({
+				left:this.currentX,
+				top:this.currentY
+			});
+
+		}
+		Css3.prototype = {
+			constructor:Css3,
+			to:function(x,y){
+				var self = this;
+				x = (typeof x == 'number') ? x:this.currentX;
+				y = (typeof y == 'number') ? y:this.currentY;
+				if( this.currentX == x &&  this.currentY == y) return;
+				this.$elem.trigger('move');
+				this.$elem
+				.off(kuazhu.transition.end)
+				.one(kuazhu.transition.end,function(){
+					self.$elem.trigger('moved');
+				});
+				this.$elem.css({
+					top:y,
+					left:x
+
+				});
+				this.currentX = x;
+				this.currentY =y;
+
+				},
+			x:function(x){
+				this.$elem.to(x);
+			},
+			y:function(y){
+				this.$elem.to(null,y);
+			}
+		}
+		function Js($elem){
+			this.$elem =$elem;
+			this.$elem.removeClass('transition');
+			this.currentX = parseFloat(this.$elem.css('left'));
+			this.currentY = parseFloat(this.$elem.css('top'));
+
+		}
+		Js.prototype = {
+			constructor:Js,
+			to:function(x,y){
+				var self = this;
+				x = (typeof x == 'number') ? x:this.currentX;
+				y = (typeof y == 'number') ? y:this.currentY;
+				if( this.currentX == x &&  this.currentY == y) return;
+				this.$elem.trigger('move');
+				this.$elem
+				.stop()
+				.animate({
+					left:x,
+					top:y
+				},function(){
+					self.$elem.trigger('moved')
+				})
+				this.currentX = x;
+				this.currentY =y;
+
+				},
+			x:function(x){
+				this.$elem.to(x);
+			},
+			y:function(y){
+				this.$elem.to(null,y);
+			}
+		}
+		var obj = new Slient($('.box'));
+		$('button').eq(0).on('click',function(){
+			obj.to(300,300);
+		})
+		$('button').eq(1).on('click',function(){
+			obj.to(50,50);
+		})
+	})(jQuery)
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exercise</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>&lt;</button>
+	<button>&gt;</button>
+	<div class="box"></div>
+	
+</body>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/transition.js"></script>
+<script type="text/javascript" src="js/move.js"></script>
+<script type="text/javascript">
+	var $elem = $('.box');
+	$elem.move({
+		Css3 :true,
+		Js:false
+	})
+	$('button').eq(0).on('click',function(){
+		$elem.move('to',400,400);
+	})
+	$('button').eq(1).on('click',function(){
+		$elem.move('to',0,200);
+	})
+</script>
+</html>

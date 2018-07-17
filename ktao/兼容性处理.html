@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ktao</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/common.css">	 -->
+	<!-- <link rel="stylesheet" href="css/index.css"> -->
+	<script src="js/jquery-1.12.4.js"=></script>
+	<script type="text/javascript" src="js/transition.js"></script>
+	<style type="text/css">
+	#box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			border: 1px solid #000;
+		}
+	.transition{
+		transition: all 0.5s;
+	}
+	.fadeOut{
+		opacity: 0;
+		visibility: hidden;
+	}
+	.slideUpDownCollapse{
+			height: 0 !important;
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+		}
+	.slideLeftRightCollapse{
+			width: 0 !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button><button>隐藏</button>
+	<div class="" id="box"></div>
+	<p>我在这里</p>
+</body>
+<script >
+	function init( $elem, hiddenCallBack){
+				
+
+				if($elem.is(':hidden')){
+					$elem.data('status','hidden');
+					
+					if(typeof hiddenCallBack == 'function') hiddenCallBack();
+				}else{
+					$elem.data('status','shown');
+				}
+			};
+		function show($elem,callBack){
+			if($elem.data('status')=='shown') return;
+			if($elem.data('status')=='show') return;
+			
+			$elem.data('status','show').trigger('show');
+			callBack();	
+		};
+		function hide($elem,callBack){
+			if($elem.data('status') == 'hidden') return;
+			if($elem.data('status') == 'hide') return;
+			$elem.data('status','hide').trigger('hide');
+			callBack();		
+		};
+	
+	var slient ={
+		init:init;
+		show:function($elem){
+			if($elem.data('status') == 'shown') return;
+			if($elem.data('status') == 'show') return;
+			$elem.data('status','show').trigger('show');
+
+			$elem.show();
+			$elem.trigger('shown').data('status','shown');
+		},
+		hide:function($elem){
+			if($elem.data('status') == 'hidden') return;
+			if($elem.data('status') == 'hide') return;
+			$elem.data('status','hide').trigger('hide');
+
+			$elem.hide();
+			$elem.trigger('hidden').data('status','hidden');
+		}
+	};
+
+	
+	//css3实现显示和隐藏，
+	var css3={
+
+		//淡入淡出的显示和隐藏
+		fade:{
+			init:function($elem){
+					$elem.addClass('transition');
+					init($elem, function(){
+						$elem.addClass('fadeOut');
+					});
+				},
+			show:function($elem){
+				//$elem.show(function(){
+				//	opacity:1;//opacity隐藏占用空间，显示事件
+				//});//改变display= block,没有过渡效果
+				// if($elem.data('status') == 'shown') return;
+				// if($elem.data('status') == 'show') return;
+				// $elem.data('status','show').trigger('show');
+				// $elem.show();
+				// $elem.off('transitionend').one('transitionend',function(){
+				// 	$elem.trigger('shown').data('status','shown');
+				// })
+				// setTimeout(function(){
+				// 	$elem.removeClass('fadeOut');
+					
+
+				// },20);
+					show($elem,function(){
+						$elem.show();
+						$elem.off(kuazhu.transition.end).one(kuazhu.transition.end,function(){
+							$elem.trigger('shown').data('status','shown');
+						})
+						setTimeout(function(){
+							$elem.removeClass('fadeOut');
+					},20);
+					
+				})
+			},
+			hide:function($elem){
+				// $elem.hide(function(){
+				// 	opacity:0;
+				// 	// });
+				// 	if($elem.data('status') == 'hidden') return;
+				// 	if($elem.data('status') == 'hide') return;
+				// 	$elem.data('status','hide').trigger('hide');
+				// 	//过渡完成后触发
+				// 	$elem.off('transitionend').one('transitionend',function(){
+				// 		$elem.hide();//相当于直接display:none;不占据页面空间
+				// 		$elem.trigger('hidden').data('status','hidden');
+
+				// 	})
+				// 	//触发了过渡
+				// 	$elem.addClass('fadeOut');
+				// }
+					hide($elem,function(){
+							$elem.off(kuazhu.transition.end).one(kuazhu.transition.end,function(){
+					 		$elem.hide();//相当于直接display:none;不占据页面空间
+							$elem.trigger('hidden').data('status','hidden');
+
+					 	});
+							$elem.addClass('fadeOut');
+					});
+				
+			},
+		
+	},
+	slideUpDown:{
+			init:function($elem){
+				$elem.height($elem.height());
+				css3._init($elem,'slideUpDownCollapse'); 
+			},
+			show:function($elem){
+				css3._show($elem,'slideUpDownCollapse');
+			},
+			hide:function($elem){
+				css3._hide($elem,'slideUpDownCollapse');
+			}				
+		},
+};
+	css3._init= function($elem,className){
+		$elem.addClass('transition');
+		init($elem,function(){
+			$elem.addClass(className);
+		});
+	}
+	css3._show= function($elem,className){
+		show($elem,function(){
+				$elem.show();
+				$elem.off(kuazhu.transition.end).one(kuazhu.transition.end,function(){
+					$elem.trigger('shown').data('status','shown');
+				})
+				setTimeout(function(){
+					$elem.removeClass(className);
+			},20);
+				
+		
+		})
+	}
+	css3._hide= function($elem,className){
+		hide($elem,function(){
+			$elem.off(kuazhu.transition.end).one(kuazhu.transition.end,function(){
+	 		$elem.hide();//相当于直接display:none;不占据页面空间
+			$elem.trigger('hidden').data('status','hidden');
+
+				 	});
+						$elem.addClass(className);
+		});
+	}
+	var $elem =$('#box');
+	$elem.on('show shown hide hiden',function(ev){
+		if(ev.type == 'show'){
+			console.log('show....');
+		}else if(ev.type == 'shown'){
+			console.log('shown...');
+		}else if(ev.type == 'hide'){
+			console.log('hide....');
+		}else if(ev.type == 'hidden'){
+			console.log('hiden ....');
+		}
+	});
+	js.slideUpDown.init($elem);
+	$('button').eq(0).on('click',function(){
+		js.slideUpDown.show($elem);
+	})
+	$('button').eq(1).on('click',function(){
+		js.slideUpDown.hide($elem);
+	});
+	/*
+	css3.fade.init($elem);
+	$('button').eq(0).on('click',function(){
+		css3.fade.show($elem);
+	})
+	$('button').eq(1).on('click',function(){
+		css3.fade.hide($elem);
+	});
+	*/
+	
+</script>
+</html>
