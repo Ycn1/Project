@@ -10,6 +10,14 @@ body{
 .link:hover{
 	color: #f36868 !important;
 }
+.nav-fixed-top{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	opacity: 0.7;
+}
 #navbar a:hover{
 	color: #f36868;
 }
@@ -56,6 +64,9 @@ body{
 	padding: 10px;
 	box-sizing: border-box;
 	margin:10px;
+}
+.main{
+	margin-top: 60px;
 }
 .main .col-md-4 .thumbnail{
 	border: none;
