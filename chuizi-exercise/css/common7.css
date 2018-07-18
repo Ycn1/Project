@@ -1,0 +1,29 @@
+/*
+* @Author: TomChen
+* @Date:   2018-04-08 10:56:44
+* @Last Modified by:   TomChen
+* @Last Modified time: 2018-04-08 15:44:10
+*/
+.container{
+			width: 1120px;
+			height: 5610px;
+			margin: 0 auto;
+			position: relative;
+		}
+.clearfix:after{
+	content: '';
+	display: block;
+	clear: both;
+	height: 0px;
+	visibility: hidden;
+}
+.clearfix{
+	*zoom:1;
+}
+body{
+	font-size: 12px;
+}
+.ws{
+	overflow: hidden;
+	padding-top: 10px;
+}
