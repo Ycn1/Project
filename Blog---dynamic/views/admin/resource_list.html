@@ -1,0 +1,41 @@
+{% extends './layout.html' %}
+
+{% block header %}
+	资源管理
+{% endblock %}
+
+{% block content %}
+	<a class="btn btn-primary" href="/resource/add" role="button">新增资源</a>
+	<table class="table table-striped">
+	  <tr>
+	  	<th>名称</th>
+	  	<th>缩略图</th>
+	  	<th>路径</th>
+	  	<th>操作</th>
+	  </tr>
+	  {% for resource in resources %}
+		   <tr>
+		  	<td>{{ resource.name }}</td>
+		  	<td>
+		  		<div class="col-xs-6 col-md-4">
+			    <a href="#" class="thumbnail">
+			      <img src="{{ resource.path }}" >
+			    </a>
+			  </div>
+		  	</td>
+		  	<td>{{ resource.path }}</td>
+		  
+
+		  	<td>		  			  
+		  		<a href="/resource/delete/{{ resource._id.toString() }}">删除</a>
+		  	</td>
+		  </tr> 	
+  	  {% endfor %}
+	 
+	</table>
+	
+
+{% if pages > 1 %}
+		{% include './pagination.html' %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends './layout.html' %}
+
+{% block title %}{{ article.title  }}{% endblock %}
+
+{% block link %}
+	<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/index.css">
+{% endblock %}
+
+{% block content %}
+					 
+<input type="hidden" id="cate-val" value="{{ category }}">
+{% include './article-list.html' %}
+		
+
+
+
+{% endblock %}
