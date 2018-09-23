@@ -78,7 +78,7 @@ ArticleModel.getPaginationArticles(req)
 					pages:dataPage.pages,
 					comments:dataPage.docs,
 					site:data.site,
-
+					category:article.category._id.toString()
 					
 
 				})	
