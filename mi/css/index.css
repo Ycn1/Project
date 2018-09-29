@@ -616,7 +616,7 @@ a:hover{
 	line-height: 46px;
 	text-align: center;
 	color: #fff;
-	font-size: 14px;
+	/*font-size: 14px;*/
 	background: #605751;
 }
 .hot .flash .box-bd .timer-box .timer  .dash{
